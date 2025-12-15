@@ -68,7 +68,7 @@ Di sini bisa dilihat:
 
 # 7. Menjalankan API di dalam Docker (environment terisolasi)
 7.1 Build Docker image  
-# dari root project
+dari root project
 docker build -t final-project-api .
 
 7.2 Jalankan container  

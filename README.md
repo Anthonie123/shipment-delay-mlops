@@ -17,16 +17,16 @@ Sebelum mulai, pastikan sudah install:
 
 3.2 Buat dan aktifkan virtual environment (opsional tapi disarankan)
 - Windows (PowerShell)  
--  python -m venv .venv  
--   .\.venv\Scripts\activate
+python -m venv .venv  
+.\.venv\Scripts\activate
 
-Mac / Linux
+- Mac / Linux
 python -m venv .venv  
 source .venv/bin/activate
 
 3.3 Install dependency  
-pip install --upgrade pip  
-pip install -r requirements.txt
+- pip install --upgrade pip  
+- pip install -r requirements.txt
 
 # 4. Setup DVC & Data
 4.1 Inisialisasi DVC (kalau belum)
@@ -37,3 +37,33 @@ pip install -r requirements.txt
 mkdir D:\dvc-storage
 - set sebagai default remote  
 dvc remote add -d local_remote D:/dvc-storage
+
+4.3 Pull data dari remote (kalau ada) atau push pertama kali
+- Kalau data sudah pernah di‑push ke remote:
+python -m dvc pull
+- Kalau ini pertama kali:
+dvc add data/train.csv data/train2.csv data/train3.csv data/train4.csv data/train5.csv data/train6.csv
+git add data/*.csv.dvc .gitignore .dvc/config  
+git commit -m "Track training data with DVC"
+dvc push
+
+# 5. Menjalankan Pipeline (Prep → Train → Eval)
+5.1 Jalankan pipeline lengkap  
+python -m dvc repro
+Perintah ini akan:
+- Menjalankan python src/data_prep.py → menghasilkan data/processed.csv
+- Menjalankan python src/train.py → training beberapa model, log ke MLflow, simpan model terbaik ke model/model_rf.pkl
+- Menjalankan python src/eval.py (kalau diisi) → evaluasi model  
+Setelah selesai, file model/model_rf.pkl akan berisi model terbaik yang siap untuk deployment.
+
+# 6. Experiment Tracking dengan MLflow
+6.1 Menjalankan MLflow UI  
+mlflow ui --port 5000  
+Lalu buka di browser:  
+http://127.0.0.1:5000  
+Di sini bisa dilihat:
+- Daftar experiment (misalnya mlops-demo)
+- Setiap run training, dengan parameter (n_estimators, max_depth, dll) dan metrik (accuracy, F1, dll)
+- Perbandingan run (pilih beberapa run lalu klik “Compare”)
+
+# 7. Menjalankan API di dalam Docker (environment terisolasi)

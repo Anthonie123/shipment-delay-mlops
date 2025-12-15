@@ -49,7 +49,7 @@ dvc push
 
 # 5. Menjalankan Pipeline (Prep → Train → Eval)
 5.1 Jalankan pipeline lengkap  
-python -m dvc repro
+python -m dvc repro  
 Perintah ini akan:
 - Menjalankan python src/data_prep.py → menghasilkan data/processed.csv
 - Menjalankan python src/train.py → training beberapa model, log ke MLflow, simpan model terbaik ke model/model_rf.pkl

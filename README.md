@@ -1,6 +1,5 @@
 # shipment-delay-mlops
 1. Struktur Project
-text
 FINAL_PROJECT/
 ├─ data/
 │  ├─ train.csv, train2.csv, ...  # data mentah (di-track DVC)

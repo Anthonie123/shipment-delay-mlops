@@ -29,7 +29,7 @@ source .venv/bin/activate
 pip install --upgrade pip  
 pip install -r requirements.txt
 
-#4. Setup DVC & Data
+# 4. Setup DVC & Data
 4.1 Inisialisasi DVC (kalau belum)
 - dvc init
 

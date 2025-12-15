@@ -13,7 +13,7 @@ Sebelum mulai, pastikan sudah install:
 # 3. Cara Clone dan Setup Project
 3.1 Clone repository
 - git clone https://github.com/<username>/<nama-repo>.git
-- cd <nama-repo>
+- cd nama-repo
 
 3.2 Buat dan aktifkan virtual environment (opsional tapi disarankan)
 - Windows (PowerShell)  

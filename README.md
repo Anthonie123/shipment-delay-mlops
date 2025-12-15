@@ -17,20 +17,16 @@ git clone https://github.com/<username>/<nama-repo>.git
 cd <nama-repo>
 
 3.2 Buat dan aktifkan virtual environment (opsional tapi disarankan)
-- Windows (PowerShell)
-
-python -m venv .venv
-
+- Windows (PowerShell)  
+python -m venv .venv  
 .\.venv\Scripts\activate
 
 Mac / Linux
-python -m venv .venv
-
+python -m venv .venv  
 source .venv/bin/activate
 
-3.3 Install dependency
-pip install --upgrade pip
-
+3.3 Install dependency  
+pip install --upgrade pip  
 pip install -r requirements.txt
 
 #4. Setup DVC & Data
@@ -40,5 +36,5 @@ pip install -r requirements.txt
 4.2 Konfigurasi remote storage lokal (contoh)
 - buat folder remote  
 mkdir D:\dvc-storage
-- set sebagai default remote
+- set sebagai default remote  
 dvc remote add -d local_remote D:/dvc-storage

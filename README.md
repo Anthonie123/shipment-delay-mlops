@@ -1,5 +1,7 @@
 # shipment-delay-mlops
 # 1. Struktur Project
+<img width="2450" height="557" alt="diagram-export-12-15-2025-5_29_11-PM" src="https://github.com/user-attachments/assets/b65ab956-7f86-4eeb-9018-e4d55b8b6e79" />
+
 
 # 2. Prasyarat
 Sebelum mulai, pastikan sudah install:

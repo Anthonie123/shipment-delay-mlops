@@ -41,7 +41,7 @@ dvc remote add -d local_remote D:/dvc-storage
 4.3 Pull data dari remote (kalau ada) atau push pertama kali
 - Kalau data sudah pernah di‑push ke remote:
 python -m dvc pull
-- Kalau ini pertama kali:
+- Kalau ini pertama kali:  
 dvc add data/train.csv data/train2.csv data/train3.csv data/train4.csv data/train5.csv data/train6.csv
 git add data/*.csv.dvc .gitignore .dvc/config  
 git commit -m "Track training data with DVC"
@@ -67,3 +67,19 @@ Di sini bisa dilihat:
 - Perbandingan run (pilih beberapa run lalu klik “Compare”)
 
 # 7. Menjalankan API di dalam Docker (environment terisolasi)
+7.1 Build Docker image  
+# dari root project
+docker build -t final-project-api .
+
+7.2 Jalankan container  
+docker run -p 8000:8000 final-project-api  
+Buka di browser: http://127.0.0.1:8000/docs  
+
+# 9. Contoh Request ke API
+9.1 Via Swagger UI  
+- Buka http://127.0.0.1:8000/docs (menggunakan postman)
+- http://127.0.0.1:8000/form (menggunakan website input data)
+- Pilih endpoint POST /predict
+- Klik Try it out
+- Isi JSON contoh sesuai schema (ShipmentFeatures)
+- Klik Execute → lihat response prediksi

@@ -19,11 +19,15 @@ cd <nama-repo>
 3.2 Buat dan aktifkan virtual environment (opsional tapi disarankan)
 Windows (PowerShell)
 python -m venv .venv
+
 .\.venv\Scripts\activate
+
 Mac / Linux
 python -m venv .venv
+
 source .venv/bin/activate
 
 3.3 Install dependency
 pip install --upgrade pip
+
 pip install -r requirements.txt

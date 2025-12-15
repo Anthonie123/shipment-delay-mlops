@@ -1,0 +1,20 @@
+# Web API
+fastapi
+uvicorn[standard]
+python-multipart
+
+# Data & model
+pandas
+numpy
+scikit-learn
+scipy
+joblib
+
+# Tracking & pipeline
+mlflow
+dvc
+
+# Config & util
+python-dotenv
+pydantic
+pydantic-settings

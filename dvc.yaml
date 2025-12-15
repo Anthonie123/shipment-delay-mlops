@@ -1,0 +1,28 @@
+stages:
+  prep:
+    cmd: python src/data_prep.py
+    deps:
+      - src/data_prep.py
+      - data/train.csv
+      - data/train2.csv
+      - data/train3.csv
+      - data/train4.csv
+      - data/train5.csv
+      - data/train6.csv
+    outs:
+      - data/processed.csv
+
+  train:
+    cmd: python src/train.py
+    deps:
+      - src/train.py
+      - data/processed.csv
+    outs:
+      - model/model_rf.pkl
+
+  eval:
+    cmd: python src/eval.py
+    deps:
+      - src/eval.py
+      - data/processed.csv
+      - model/model_rf.pkl

@@ -1,0 +1,6 @@
+[core]
+    remote = local_remote
+['remote "gdrive_remote"']
+    url = gdrive://10FCAgH4HkWsbmEScM5iqFPdCgNWK7IUM
+['remote "local_remote"']
+    url = E:\document\machine_learning\dvc-storage

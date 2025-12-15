@@ -38,7 +38,7 @@ pip install -r requirements.txt
 - dvc init
 
 4.2 Konfigurasi remote storage lokal (contoh)
-- buat folder remote
+- buat folder remote  
 mkdir D:\dvc-storage
 - set sebagai default remote
 dvc remote add -d local_remote D:/dvc-storage
